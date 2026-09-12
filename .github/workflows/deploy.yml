@@ -38,8 +38,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
