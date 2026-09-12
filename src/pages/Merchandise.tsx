@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
+import { SiteFooter } from "@/components/SiteFooter";
 import bmaLogo from "@/assets/bma-logo.png";
 import hoodieFront from "@/assets/hoodie-front.jpg";
 import hoodieBack from "@/assets/hoodie-back.jpg";
@@ -12,8 +14,6 @@ import phonePouches from "@/assets/phone-pouches.jpg";
 import majorDogs from "@/assets/major-dogs.jpg";
 
 const Merchandise = () => {
-  const navigate = useNavigate();
-
   const products = [
     {
       id: 1,
@@ -40,19 +40,21 @@ const Merchandise = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="BMA Merchandise Store | Bark Media Africa"
+        description="Shop Bark Media Africa merchandise: hoodies, shirts, caps, and accessories for the African crypto and Web3 community."
+        path="/merchandise"
+      />
       {/* Header */}
       <header className="border-b border-border/50 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => navigate('/')}
-                className="hover:bg-primary/10"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
+              <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10">
+                <Link to="/">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Home
+                </Link>
               </Button>
               <img 
                 src={bmaLogo} 
@@ -146,17 +148,13 @@ const Merchandise = () => {
             >
               Follow for Updates
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
-              onClick={() => navigate('/')}
-            >
-              Back to Homepage
+            <Button asChild variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20">
+              <Link to="/">Back to Homepage</Link>
             </Button>
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 };

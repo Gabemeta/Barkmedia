@@ -1,26 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MapPin, Users, Briefcase, Calendar } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
+import { SiteFooter } from "@/components/SiteFooter";
 import bmaLogo from "@/assets/bma-logo.png";
 import web3Partnership from "@/assets/web3-partnership.jpg";
 import bmaHeadquarters from "@/assets/bma-headquarters.jpg";
 
 const Possibilities = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Infinite Possibilities | Bark Media Africa"
+        description="Explore Bark Media Africa's future: headquarters, Web3 partnerships, and the next chapter of African blockchain community building."
+        path="/possibilities"
+      />
       {/* Header */}
       <header className="border-b border-border/40 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => navigate('/')}
-              className="hover:bg-primary/10"
-            >
-              <ArrowLeft className="h-5 w-5" />
+            <Button asChild variant="ghost" size="icon" className="hover:bg-primary/10">
+              <Link to="/" aria-label="Back to home">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
             </Button>
             <div className="flex items-center gap-3">
               <img 
@@ -201,18 +203,14 @@ const Possibilities = () => {
               >
                 Join Our Community
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-8 py-6"
-                onClick={() => navigate('/')}
-              >
-                Back to Home
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Link to="/">Back to Home</Link>
               </Button>
             </div>
           </section>
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 };

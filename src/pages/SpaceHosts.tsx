@@ -1,9 +1,14 @@
 import { ArrowLeft, Mic, Crown, ExternalLink } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Seo } from "@/components/Seo";
+import { SiteFooter } from "@/components/SiteFooter";
 import bmaLogo from "@/assets/bma-logo.png";
+import { Seo } from "@/components/Seo";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Link } from "react-router-dom";
 import tenguImg from "@/assets/tengu.jpg";
 import barkImg from "@/assets/bark.jpg";
 import shiboImg from "@/assets/shibo.jpg";
@@ -104,7 +109,6 @@ const getHostColors = (name: string) => {
 };
 
 const SpaceHosts = () => {
-  const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -292,6 +296,11 @@ const SpaceHosts = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-background overflow-x-hidden">
+      <Seo
+        title="BMA Space Hosts | Bark Media Africa"
+        description="Meet Bark Media Africa space hosts leading African Web3 conversations on X. Join live spaces across the BMA community."
+        path="/space-hosts"
+      />
       {/* Parallax Background Layers */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div
@@ -325,9 +334,11 @@ const SpaceHosts = () => {
         }}
       >
         <div className="container mx-auto px-4 py-4 flex items-center gap-4">
-          <Button variant="ghost" size="sm" onClick={() => navigate("/")} className="hover:bg-muted">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+          <Button asChild variant="ghost" size="sm" className="hover:bg-muted">
+            <Link to="/">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Link>
           </Button>
           <img src={bmaLogo} alt="BMA Logo" className="w-10 h-10 object-cover rounded-lg" />
           <h1 className="text-2xl font-heading font-bold text-primary">BMA SPACE HOSTS</h1>
@@ -637,8 +648,8 @@ const SpaceHosts = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Connect with our amazing space hosts and be part of the conversations that matter in Web3 and crypto.
             </p>
-            <Button onClick={() => navigate("/")} className="text-lg px-8 py-3">
-              Back to Home
+            <Button asChild className="text-lg px-8 py-3">
+              <Link to="/">Back to Home</Link>
             </Button>
           </div>
         </section>
@@ -646,6 +657,7 @@ const SpaceHosts = () => {
 
       {/* Footer Gradient */}
       <div className="h-32 bg-gradient-to-t from-primary/5 to-transparent" />
+      <SiteFooter />
     </div>
   );
 };

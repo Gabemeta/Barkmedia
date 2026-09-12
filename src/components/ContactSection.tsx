@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { UserPlus, ShoppingBag, Mail, Users, Mic } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ContactSection = () => {
-  const navigate = useNavigate();
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
@@ -41,12 +40,8 @@ export const ContactSection = () => {
             <p className="text-muted-foreground mb-6">
               Show your BMA pride with our exclusive collection of hoodies, vests, caps, and accessories designed for the African crypto community
             </p>
-            <Button 
-              variant="outline" 
-              className="w-full"
-              onClick={() => navigate('/merchandise')}
-            >
-              Check-out our Merchandise
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/merchandise">Check-out our Merchandise</Link>
             </Button>
           </Card>
 
@@ -56,12 +51,8 @@ export const ContactSection = () => {
             <p className="text-muted-foreground mb-6">
               Meet our amazing space hosts and join their conversations about Web3, crypto, and building the future together.
             </p>
-            <Button 
-              variant="outline" 
-              className="w-full"
-              onClick={() => navigate('/space-hosts')}
-            >
-              View Space Hosts
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/space-hosts">View Space Hosts</Link>
             </Button>
           </Card>
 

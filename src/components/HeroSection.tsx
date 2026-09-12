@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Twitter, Globe } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/african-sunset-hero.jpg";
 import bmaLogo from "@/assets/bma-logo.png";
 
 export const HeroSection = () => {
-  const navigate = useNavigate();
-  
   return (
     <header 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -80,10 +78,10 @@ export const HeroSection = () => {
             <div className="text-4xl md:text-6xl font-bold gradient-text mb-2 group-hover:animate-pulse">250+</div>
             <div className="text-muted-foreground text-lg">Community Members</div>
           </div>
-          <div className="text-center cursor-pointer group hover:scale-110 transition-transform duration-300" onClick={() => navigate('/possibilities')}>
+          <Link to="/possibilities" className="text-center group hover:scale-110 transition-transform duration-300">
             <div className="text-4xl md:text-6xl font-bold gradient-text mb-2 animate-float" style={{ animationDuration: '3s' }}>∞</div>
             <div className="text-muted-foreground text-lg group-hover:text-primary transition-colors">Possibilities</div>
-          </div>
+          </Link>
         </div>
       </div>
     </header>

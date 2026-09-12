@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
+import { SiteFooter } from "@/components/SiteFooter";
 import bookCover from "@/assets/book-cover-weed.jpg";
 import bmaLogo from "@/assets/bma-logo.png";
 
 const Books = () => {
-  const navigate = useNavigate();
-
   const books = [
     {
       id: 1,
@@ -28,12 +28,19 @@ const Books = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Community Books | Bark Media Africa"
+        description="Discover books written by Bark Media Africa community members. Support African authors in crypto, mindset, and Web3."
+        path="/books"
+      />
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Button variant="ghost" size="sm" onClick={() => navigate("/")} className="gap-2">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
+          <Button asChild variant="ghost" size="sm" className="gap-2">
+            <Link to="/">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Link>
           </Button>
           <img src={bmaLogo} alt="BMA Logo" className="h-12 w-12 object-cover rounded-lg" />
         </div>
@@ -92,6 +99,7 @@ const Books = () => {
           </p>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 };
