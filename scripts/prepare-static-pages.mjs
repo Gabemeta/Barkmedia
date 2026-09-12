@@ -39,7 +39,7 @@ const pages = [
 ];
 
 function applyMeta(html, page) {
-  const url = `https://barkmediaafrica.com${page.path === "/" ? "/" : page.path}`;
+  const url = `https://barkmediaafrica.com${page.path === "/" ? "/" : `${page.path}/`}`;
   const ogTitle = page.title.replace(" | barkmediaafrica.com", "");
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${page.title}</title>`)

@@ -8,7 +8,7 @@ type SeoProps = {
 
 export const Seo = ({ title, description, path }: SeoProps) => {
   useEffect(() => {
-    const url = `https://barkmediaafrica.com${path === "/" ? "/" : path}`;
+    const url = `https://barkmediaafrica.com${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
     document.title = title;
 
     const setMeta = (selector: string, attr: "content" | "href", value: string) => {
