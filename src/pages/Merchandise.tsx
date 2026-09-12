@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import bmaLogo from "@/assets/bma-logo.jpg";
+import bmaLogo from "@/assets/bma-logo.png";
 import hoodieFront from "@/assets/hoodie-front.jpg";
 import hoodieBack from "@/assets/hoodie-back.jpg";
 import shirtFront from "@/assets/shirt-front.jpg";
@@ -57,7 +57,7 @@ const Merchandise = () => {
               <img 
                 src={bmaLogo} 
                 alt="BMA Logo" 
-                className="w-10 h-10 object-contain rounded-lg"
+                className="w-10 h-10 object-cover rounded-lg"
               />
               <h1 className="text-sm sm:text-base md:text-xl font-bold gradient-text">BMA Merchandise Store</h1>
             </div>

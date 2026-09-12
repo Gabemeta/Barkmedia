@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Twitter, Globe } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/african-sunset-hero.jpg";
-import bmaLogo from "@/assets/bma-logo-optimized.jpg";
+import bmaLogo from "@/assets/bma-logo.png";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export const HeroSection = () => {
               <img 
                 src={bmaLogo} 
                 alt="Bark Media Africa (BMA) Logo - Premier African Crypto Community" 
-                className="w-[0.8em] h-[0.8em] object-contain rounded-lg bg-white/10 backdrop-blur-sm p-1 border border-white/20"
+                className="w-[1.15em] h-[1.15em] object-cover rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]"
               />
             </div>
           </div>

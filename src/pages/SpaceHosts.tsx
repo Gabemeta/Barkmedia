@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import bmaLogo from "@/assets/bma-logo.png";
 import tenguImg from "@/assets/tengu.jpg";
 import barkImg from "@/assets/bark.jpg";
 import shiboImg from "@/assets/shibo.jpg";
@@ -328,6 +329,7 @@ const SpaceHosts = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Button>
+          <img src={bmaLogo} alt="BMA Logo" className="w-10 h-10 object-cover rounded-lg" />
           <h1 className="text-2xl font-heading font-bold text-primary">BMA SPACE HOSTS</h1>
         </div>
       </header>

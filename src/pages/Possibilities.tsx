@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MapPin, Users, Briefcase, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import bmaLogo from "@/assets/bma-logo.jpg";
+import bmaLogo from "@/assets/bma-logo.png";
 import web3Partnership from "@/assets/web3-partnership.jpg";
 import bmaHeadquarters from "@/assets/bma-headquarters.jpg";
 
@@ -26,7 +26,7 @@ const Possibilities = () => {
               <img 
                 src={bmaLogo} 
                 alt="BMA Logo" 
-                className="w-10 h-10 object-contain rounded-lg bg-white/10 backdrop-blur-sm p-1 border border-white/20"
+                className="w-10 h-10 object-cover rounded-lg"
               />
               <div>
                 <h1 className="text-2xl font-bold gradient-text">Infinite Possibilities</h1>

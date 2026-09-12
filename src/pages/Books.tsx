@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import bookCover from "@/assets/book-cover-weed.jpg";
-import bmaLogo from "@/assets/bma-logo-optimized.jpg";
+import bmaLogo from "@/assets/bma-logo.png";
 
 const Books = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Books = () => {
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Button>
-          <img src={bmaLogo} alt="BMA Logo" className="h-12 object-contain" />
+          <img src={bmaLogo} alt="BMA Logo" className="h-12 w-12 object-cover rounded-lg" />
         </div>
       </header>
 
